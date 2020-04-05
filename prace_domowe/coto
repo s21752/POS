@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ $1 =~ (^[A-Z]{1}[a-z]*$) ]]; then
+	echo "$1 is valid name"
+elif [[ $1 =~ (^[0-9]{2}-[0-9]{3}$) ]]; then
+	echo "$1 is valid post-code"
+elif [[ $1 =~ (^[a-zA-Z0-9]+[-a-zA-Z0-9_\+\.]*[a-zA-Z0-9]+)@([a-zA-Z0-9]+[-a-zA-Z0-9]*[a-zA-Z0-9]+\.[a-z]{2,5}$) ]]; then
+	echo "$1 is valid mail address"
+else
+	echo "not valid name, post-code or mail address"
+fi
